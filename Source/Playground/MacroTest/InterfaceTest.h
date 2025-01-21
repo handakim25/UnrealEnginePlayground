@@ -21,6 +21,7 @@
 // https://benui.ca/unreal/uinterface/
 // https://stackoverflow.com/questions/79177844/unreal-engine-i-cant-fix-interfaces-with-blueprintcallable-functions-but-no
 // https://algorfati.tistory.com/45
+// https://forums.unrealengine.com/t/how-blueprintnativeevent-specifier-works/360534/5
 
 UINTERFACE(MinimalAPI)
 class UInterfaceTest : public UInterface
