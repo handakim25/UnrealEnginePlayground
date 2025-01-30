@@ -41,9 +41,14 @@
 *.sdf
 *.VC.db
 *.VC.opendb
+
 # vscode
 *.code-workspace
 .ignore
+
+# Rider
+.idea/
+.vsconfig
 
 # Precompiled Assets
 SourceArt/**/*.png
