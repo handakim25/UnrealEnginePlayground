@@ -88,7 +88,7 @@ void ALookAt::Tick(float DeltaTime)
             FVector Direction = (LookAtTarget->GetActorLocation() - GetActorLocation());
             FRotator TargetRotation = FRotationMatrix::MakeFromX(Direction).Rotator();
     
-            FRotator SmoothRotation = FMath::RInterpTo(GetActorRotation(), TargetRotation, DeltaTime, 4.0f);
+            FRotator SmoothRotation = FMath::RInterpTo(GetActorRotation(), TargetRotation, DeltaTime, 5.0f);
         	SetActorRotation(SmoothRotation);
         }
         if(IsSlerp)
