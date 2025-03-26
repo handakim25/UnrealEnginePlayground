@@ -6,6 +6,7 @@
 #include "GameFramework/Actor.h"
 #include "RegisterDelegate.generated.h"
 
+class ADelegateTest;
 UCLASS()
 class PLAYGROUND_API ARegisterDelegate : public AActor
 {
@@ -19,11 +20,17 @@ protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
 
-	UPROPERTY(EditAnywhere)
-	class ADelegateTest* DelegateTest;
+	TWeakObjectPtr<ADelegateTest> DelegateTestWeakPtr;
 
+	void CallSimpleMethod();
+	UFUNCTION(CallInEditor)
 	void BindSimpleDelegate();
-	
+
+	UFUNCTION(CallInEditor)
+	void DestroyAndGC();
+
+	UFUNCTION(CallInEditor)
+	void OnlyDestroy();
 public:	
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;

@@ -34,8 +34,19 @@ void ADelegateTest::BeginPlay()
 	// CallDynamicDelegate();
 
 	// Multi Cast Dynamic Delegate Test
-	CallBindDynamicMulticastDelegate();
-	CallDynamicMulticastDelegate();
+	// CallBindDynamicMulticastDelegate();
+	// CallDynamicMulticastDelegate();
+
+	// 델리게이트가 무효화 됬을 때의 정상 작동 태스트
+	// 시나리오
+	// 1. 다른 객체가 델리게이트를 바인딩한다.
+	// FSimpleDelegate에 바인딩
+	// DelegateTest의 델리게이트에 RegisterDelegate가 바인드
+	// 2. 다른 객체가 파괴된다.
+	// Register Delegate를 파괴
+	// a. GC를 수행
+	// b. GC를 수행하지 않음, Reference 관리에 주의
+	// 3. 델리게이트가 호출을 테스트한다.
 }
 
 void ADelegateTest::CallSimpleDelegate()
@@ -192,6 +203,21 @@ void ADelegateTest::TestMethod()
 void ADelegateTest::TestUFunctionMethod()
 {
 	UE_LOG(LogTemp, Display, TEXT("UFunction Method"));
+}
+
+void ADelegateTest::ValidDelegateTest()
+{
+	// if (OnSimpleValidDelegate.IsBound())
+	// {
+	// 	UE_LOG(LogTemp, Display, TEXT("OnSimpleValidDelegate is bound"));
+	// 	OnSimpleValidDelegate.Execute();
+	// }
+	// else
+	// {
+	// 	UE_LOG(LogTemp, Display, TEXT("OnSimpleValidDelegate is not bound"));
+	// }
+
+	OnSimpleValidDelegate.Execute();
 }
 
 // Called every frame

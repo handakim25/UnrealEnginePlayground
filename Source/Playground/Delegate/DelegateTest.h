@@ -55,6 +55,8 @@ public:
 
 	FDynamicSignature OnDynamicDelegate;
 	FDynamicBroadcastDelegate OnDynamicBroadcastDelegate;
+
+	FSimpleSignature OnSimpleValidDelegate;
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
@@ -93,6 +95,9 @@ protected:
 	void TestMethod();
 	UFUNCTION()
 	void TestUFunctionMethod();
+
+	UFUNCTION(CallInEditor)
+	void ValidDelegateTest();
 public:	
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
